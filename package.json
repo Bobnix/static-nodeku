@@ -1,0 +1,24 @@
+{
+  "name": "static-nodeku",
+  "version": "0.0.0",
+  "description": "A simple, static server for Heroku",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Bobnix/static-nodeku.git"
+  },
+  "keywords": [
+    "heroku",
+    "server"
+  ],
+  "author": "Bob Roberts",
+  "license": "GPL2",
+  "bugs": {
+    "url": "https://github.com/Bobnix/static-nodeku/issues"
+  },
+  "homepage": "https://github.com/Bobnix/static-nodeku"
+}
