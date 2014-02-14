@@ -1,16 +1,21 @@
-var sys = require("sys"),  
-my_http = require("http"),  
-path = require("path"),  
-url = require("url"),  
-filesys = require("fs");  
-my_http.createServer(function(request,response){  
-	var my_path = url.parse(request.url).pathname;  
+var express = require("express");
+var logfmt = require("logfmt");
+var path = require("path");
+var url = require("url");
+var filesys = require("fs");
+var properties = require("./properties.js");
+var app = express();
+
+app.use(logfmt.requestLogger());
+
+app.get('/', function(request, response) {
+  var my_path = url.parse(request.url).pathname;  
 	if(my_path == '/'){
 		my_path = '/index.html';
 	}
-	sys.puts(my_path);
-	var full_path = path.join(process.cwd(),'site/'+my_path);  
-	path.exists(full_path,function(exists){  
+	
+	var full_path = path.join(process.cwd(),properties.webroot,my_path);  
+	filesys.exists(full_path,function(exists){  
 		if(!exists){  
 			response.writeHeader(404, {"Content-Type": "text/plain"});    
 			response.write("404 Not Found\n");    
@@ -32,6 +37,10 @@ my_http.createServer(function(request,response){
 					   
 			});  
 		}  
-	});  
-}).listen(process.env.PORT || 8080);  
-sys.puts("Server Running");
+	}); 
+});
+
+var port = Number(process.env.PORT || properties.defaultPort);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});

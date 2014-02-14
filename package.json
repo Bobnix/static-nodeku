@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Bobnix/static-nodeku/issues"
   },
-  "homepage": "https://github.com/Bobnix/static-nodeku"
+  "homepage": "https://github.com/Bobnix/static-nodeku",
+  "dependencies": {
+    "logfmt": "~0.21.0",
+    "express": "~3.4.8"
+  }
 }
