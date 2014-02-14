@@ -9,7 +9,7 @@ my_http.createServer(function(request,response){
 		my_path = '/index.html';
 	}
 	sys.puts(my_path);
-	var full_path = path.join(process.cwd(),'site\\'+my_path);  
+	var full_path = path.join(process.cwd(),'site/'+my_path);  
 	path.exists(full_path,function(exists){  
 		if(!exists){  
 			response.writeHeader(404, {"Content-Type": "text/plain"});    
