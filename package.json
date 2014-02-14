@@ -1,6 +1,6 @@
 {
   "name": "static-nodeku",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A simple, static server for Heroku",
   "main": "server.js",
   "scripts": {
@@ -24,5 +24,8 @@
   "dependencies": {
     "logfmt": "~0.21.0",
     "express": "~3.4.8"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
