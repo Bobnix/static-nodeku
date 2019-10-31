@@ -1,4 +1,4 @@
-static-nodeku
+static-nodeku (DEPRECATED)
 =============
 
 A light static file server for heroku based on Node.js
